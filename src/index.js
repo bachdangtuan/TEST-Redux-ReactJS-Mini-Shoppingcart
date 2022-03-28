@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+//root reducer là nơi chứa store tổng của toàn ứng dụng
+import {RootReducer} from './Reducer/RootReducer'
+import { Provider } from 'react-redux';
+import {createStore} from 'redux'
+const store = createStore(RootReducer);
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
